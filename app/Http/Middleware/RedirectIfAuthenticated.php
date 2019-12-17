@@ -18,7 +18,9 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            return redirect('/');
+        }else{
+            return redirect()->action('AdminController@login')->with('flash_massage_error', 'You Must Log In To Access!');
         }
 
         return $next($request);

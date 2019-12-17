@@ -46,6 +46,29 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($this->isHttpException($exception)) {
+            $pageConfigs = [
+                'bodyClass' => "bg-full-screen-image",
+                'blankPage' => true
+            ];
+            if ($exception->getStatusCode() == 404) {
+    
+               
+    
+               
+                return response()->view('/pages/error-404', [
+                    'pageConfigs' => $pageConfigs
+                ], 404);
+            }
+        
+            if ($exception->getStatusCode() == 500) {
+                return response()->view('/pages/error-500', [
+                    'pageConfigs' => $pageConfigs
+                ], 500);
+            }
+        }
+    
+       
         return parent::render($request, $exception);
     }
 }
