@@ -98,7 +98,7 @@
     </div>
   </div>
 </section>
-<!-- // Types section end -->top-end
+<!-- // Types section end -->
 
 <!-- Options section start -->
 <section id="options">
