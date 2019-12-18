@@ -18,11 +18,15 @@ class Category extends Model
         'name',
         'description',
         'url',
+        'parent_id',
+        'status',
+        
     ];
+
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'category';
+   // protected $table = 'category';
 }

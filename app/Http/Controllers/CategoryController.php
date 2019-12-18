@@ -33,12 +33,23 @@
                     'name' => 'required',
                     'description' => 'required',
                     'url' => 'required',
+                    'parent_id' => 'required',
+                    'status' => 'required',
+                   
                 ]);
     
-                Category->($request->all());
+    
+                $category = new Category();
+                $category->name = $data['name'];
+                $category->parent_id = $data['parent_id'];
+                $category->description =$data['description'];
+                $category->url = $data['url'];
+                $category->status =$data['status'];
+    
+                $category->save();
     
                 return Redirect::to('/admin/add-category')
-                    ->with('success', 'Greate! Product created successfully.');
+                    ->with('success', 'Grate! Category  created successfully.');
                 
               /*  $category = new Category;
                 $category->name=$data['name'];

@@ -24,7 +24,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group"><label>PARENT ID</label>
-                                            <div class="controls"><input type="text" name="parent_id"
+                                            <div class="controls"><input type="number" name="parent_id" min="0"
                                                                          class="form-control"
                                                                          data-validation-required-message="This field is required"
                                                                          value="{{ old('parent_id') }}"
@@ -50,7 +50,7 @@
                                                                          placeholder="url"></div>
                                         </div>
                                         <div class="form-group"><label>STATUS</label>
-                                            <div class="controls"><input type="text" name="status" class="form-control"
+                                            <div class="controls"><input type="number" name="status" class="form-control" min="0" max="1"
                                                                          data-validation-required-message="This field is required"
                                                                          value="{{ old('status') }}"
                                                                          placeholder="status"></div>
